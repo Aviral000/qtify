@@ -1,0 +1,20 @@
+.hero-body {
+    display: flex;
+    align-items: center;
+    margin-left: 26vw;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+.hero-heading {
+    font-size: 2rem;
+    color: #FFFFFF;
+}
+
+.hero-headingtext {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

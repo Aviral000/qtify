@@ -20,7 +20,7 @@ export default function Navbar() {
             placeholder="Search an album of your choice"
             className="styled-input-field"
           />
-          <InputAdornment className="search-icon">
+          <InputAdornment position="end" className="search-icon">
             <IconButton aria-label="search">
               <SearchOutlinedIcon />
             </IconButton>
