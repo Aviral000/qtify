@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/qtify/static/css/main.5199ebd6.css",
+    "main.js": "/qtify/static/js/main.01c79ad2.js",
+    "static/js/453.444b85db.chunk.js": "/qtify/static/js/453.444b85db.chunk.js",
+    "index.html": "/qtify/index.html",
+    "main.5199ebd6.css.map": "/qtify/static/css/main.5199ebd6.css.map",
+    "main.01c79ad2.js.map": "/qtify/static/js/main.01c79ad2.js.map",
+    "453.444b85db.chunk.js.map": "/qtify/static/js/453.444b85db.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5199ebd6.css",
+    "static/js/main.01c79ad2.js"
+  ]
+}
