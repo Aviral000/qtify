@@ -86,13 +86,13 @@ export default function Albumlist() {
       <div style={{ display: "flex", justifyContent: "space-between" }}>
         <div className='album-heading'> Top Albums </div>
         <div style={{ marginRight: "2rem", color: "white" }}>
-          <Button onClick={toggleShowAll} style={{ color: "#34C94B" }}>{texttoggler()}</Button>
+          <Button onClick={toggleShowAll} style={{ color: "white" }}>{texttoggler()}</Button>
         </div>
       </div>
       <div className="grid-container">
         {(showAll ? albumlist : partialList).map((album) => (
-          <div>
-            <div className="grid-item" key={album.id}>
+          <div className="top-album-card" key={album.id}>
+            <div className="grid-item">
               <Card className="card">
                 <CardContent style={{ padding: 0 }}>
                   <div>
@@ -116,13 +116,13 @@ export default function Albumlist() {
       <div style={{ display: "flex", justifyContent: "space-between" }}>
         <div className='album-heading'> New Albums </div>
         <div style={{ marginRight: "2rem", color: "white" }}>
-          <Button onClick={toggleShowNewAll} style={{ color: "#34C94B" }}>{newTexttoggler()}</Button>
+          <Button onClick={toggleShowNewAll} style={{ color: "white" }}>{newTexttoggler()}</Button>
         </div>
       </div>
       <div className="grid-container">
         {(showNewAll ? newAlbumList : newPartialList).map((album) => (
-          <div>
-            <div className="grid-item" key={album.id}>
+          <div className="new-album-card" key={album.id}>
+            <div className="grid-item">
               <Card className="card">
                 <CardContent style={{ padding: 0 }}>
                   <div>
