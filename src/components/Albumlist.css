@@ -17,3 +17,20 @@
     font-size: 1.5rem;
     font-family: 'Poppins', sans-serif;
 }
+
+.album-name {
+    margin: .5rem;
+    border-radius: 1rem;
+    background-color: #121212;
+    color: #ffffff;
+    font-size: small;
+    padding: .5rem;
+    padding-left: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.album-title {
+    color: white;
+    margin-left: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+}
