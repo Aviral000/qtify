@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import "./Albumlist.css";
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
 import axios from "axios";
+import "./grid1.styles.css";
 
 export default function Albumlist() {
   const [albumlist, setAlbumlist] = useState([]);
+  const [partialList, setPartialList] = useState([]);
+  const [showAll, setShowAll] = useState(false);
 
   const ApiCallForAlbums = async () => {
     try {
@@ -25,31 +26,58 @@ export default function Albumlist() {
     ApiCallForAlbums();
   }, []);
 
+  useEffect(() => {
+    const collapseList = () => {
+      const list = albumlist.slice(0, 6);
+      setPartialList(list);
+    };
+
+    if (!showAll) {
+      collapseList();
+    } else {
+      setPartialList(albumlist);
+    }
+  }, [showAll, albumlist]);
+
+  const toggleShowAll = () => {
+    setShowAll(!showAll);
+  };
+
+  const texttoggler = () => {
+    return showAll ? "Collapse" : "Show All";
+  }
+
   return (
-    <Grid container spacing={2}>
-      {albumlist.map((album) => (
-        <Grid item xs={12} sm={6} md={3} lg={2} key={album.id}
-            style={{
-                marginLeft: "10px",
-            }}
-        >
-            <Card className='card-body'>
-                <CardContent style={{ padding: 0 }}>
-                    <div>
-                        <img src={album.image} alt={album.title} className='img-sizing' />
-                    </div>
-                </CardContent>
+    <div style={{ margin: "1rem" }}>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div className='album-heading'>
+          Top Albums
+        </div>
+        <div style={{ marginRight: "2rem", color: "white" }}>
+          <Button onClick={toggleShowAll}>{texttoggler()}</Button>
+        </div>
+      </div>
+      <div className="grid-container">
+        {(showAll ? albumlist : partialList).map((album) => (
+          <div className="grid-item" key={album.id}>
+            <Card className="card">
+              <CardContent style={{ padding: 0 }}>
+                <div>
+                  <img src={album.image} alt={album.title} />
+                </div>
+              </CardContent>
             </Card>
             <div>
-                <Typography variant="h5" component="div" color="white">
-                {album.follows}
-                </Typography>
-                <Typography variant="body2" color="white">
+              <Typography variant="h5" component="h5">
+                <span>follows</span>: {album.follows}
+              </Typography>
+              <Typography variant="body2" component="p">
                 {album.title}
-                </Typography>
+              </Typography>
             </div>
-        </Grid>
-      ))}
-    </Grid>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }

@@ -8,6 +8,7 @@ export default function Songlist() {
     <div>
       <Navbar />
       <HeroSection />
+      <hr />
       <Albumlist />
     </div>
   )

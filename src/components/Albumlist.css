@@ -9,3 +9,11 @@
     height: 90%;
     object-fit: cover;
 }
+
+.album-heading {
+    font-weight: bold;
+    color: white;
+    margin-left: 2rem;
+    font-size: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+}
