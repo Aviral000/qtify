@@ -164,9 +164,9 @@ export default function Albumlist() {
 
   const ApiCallForAlbums = async () => {
     try {
-      // const response = await axios.get("https://qtify-backend-labs.crio.do/albums/top");
+      const response = await axios.get("https://qtify-backend-labs.crio.do/albums/top");
       setAlbumlist(topAlbums);
-      return topAlbums;
+      return response;
     } catch (error) {
       throw error;
     }
@@ -174,9 +174,9 @@ export default function Albumlist() {
 
   const ApiCallForNewAlbums = async () => {
     try {
-      // const response = await axios.get("https://qtify-backend-labs.crio.do/albums/new");
+      const response = await axios.get("https://qtify-backend-labs.crio.do/albums/new");
       setNewAlbumList(newAlbum);
-      return newAlbum;
+      return response;
     } catch (error) {
       throw error;
     }
