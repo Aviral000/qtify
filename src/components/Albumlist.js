@@ -232,7 +232,7 @@ export default function Albumlist() {
       <div style={{ display: "flex", justifyContent: "space-between" }}>
         <div className='album-heading'> Top Albums </div>
         <div style={{ marginRight: "2rem", color: "white" }}>
-          <Button onClick={toggleShowAll} style={{ color: "white" }}>{texttoggler()}</Button>
+          <Button onClick={toggleShowAll} style={{ color: "#34C94B" }}>{texttoggler()}</Button>
         </div>
       </div>
       <div className="grid-container" style={{ marginBottom: "2rem" }}>
@@ -252,7 +252,7 @@ export default function Albumlist() {
       <div style={{ display: "flex", justifyContent: "space-between", marginTop: "2rem" }}>
         <div className='album-heading'> New Albums </div>
         <div style={{ marginRight: "2rem", color: "white" }}>
-          <Button onClick={toggleShowNewAll} style={{ color: "white" }}>{newTexttoggler()}</Button>
+          <Button onClick={toggleShowNewAll} style={{ color: "#34C94B" }}>{newTexttoggler()}</Button>
         </div>
       </div>
       <div className="grid-container">
