@@ -158,7 +158,7 @@ export default function Albumlist() {
   const [showAll, setShowAll] = useState(true);
   const [newAlbumList, setNewAlbumList] = useState([]);
   const [newPartialList, setNewPartialList] = useState([]);
-  const [showNewAll, setShowNewAll] = useState(false);
+  const [showNewAll, setShowNewAll] = useState(true);
 
   const ApiCallForAlbums = async () => {
     try {
