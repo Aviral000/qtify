@@ -151,8 +151,6 @@ import "./Albumlist.css";
 import axios from "axios";
 import Button from '@mui/material/Button';
 import "./grid1.styles.css";
-import topAlbums from '../db/top.album.json';
-import newAlbum from "../db/new.album.json"
 
 export default function Albumlist() {
   const [albumlist, setAlbumlist] = useState([]);
@@ -165,8 +163,8 @@ export default function Albumlist() {
   const ApiCallForAlbums = async () => {
     try {
       const response = await axios.get("https://qtify-backend-labs.crio.do/albums/top");
-      setAlbumlist(topAlbums);
-      return response;
+      setAlbumlist(response.data);
+      return response.data;
     } catch (error) {
       throw error;
     }
@@ -175,8 +173,8 @@ export default function Albumlist() {
   const ApiCallForNewAlbums = async () => {
     try {
       const response = await axios.get("https://qtify-backend-labs.crio.do/albums/new");
-      setNewAlbumList(newAlbum);
-      return response;
+      setNewAlbumList(response.data);
+      return response.data;
     } catch (error) {
       throw error;
     }
