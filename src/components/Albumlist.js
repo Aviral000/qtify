@@ -155,7 +155,7 @@ import "./grid1.styles.css";
 export default function Albumlist() {
   const [albumlist, setAlbumlist] = useState([]);
   const [partialList, setPartialList] = useState([]);
-  const [showAll, setShowAll] = useState(false);
+  const [showAll, setShowAll] = useState(true);
   const [newAlbumList, setNewAlbumList] = useState([]);
   const [newPartialList, setNewPartialList] = useState([]);
   const [showNewAll, setShowNewAll] = useState(false);
