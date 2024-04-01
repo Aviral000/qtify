@@ -254,17 +254,21 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
 const SwiperComponent = ({ albumlist }) => {
   return (
     <Swiper
-      modules={[Navigation, Pagination]}
+      modules={[Navigation, Pagination, Autoplay]}
       slidesPerView={6}
       spaceBetween={10}
       navigation
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
+      autoplay={{
+        delay: 4000,
+        disableOnInteraction: false,
+      }}
     >
       {albumlist !== undefined && albumlist.length > 0 ? (
         albumlist.map((album, index) => (
