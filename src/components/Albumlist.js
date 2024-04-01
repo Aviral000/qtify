@@ -354,7 +354,9 @@ export default function Albumlist() {
         </div>
       )}
       {/* Render the grid layout when showAll is true (expanded state) */}
-      {showAll && (
+      {albumlist.length === 0 ? (
+        <CircularProgress />
+      ) : (showAll && (
         <div className="grid-container" style={{ marginBottom: "2rem" }}>
           {albumlist.map((album) => (
             <div className="top-album-card" key={album.id}>
@@ -368,7 +370,7 @@ export default function Albumlist() {
             </div>
           ))}
         </div>
-      )}
+      ))}
 
       <hr color='#34C94B' />
       <div style={{ display: "flex", justifyContent: "space-between", marginTop: "2rem" }}>
@@ -386,7 +388,10 @@ export default function Albumlist() {
         </div>
       )}
       {/* Render the grid layout when showNewAll is true (expanded state) */}
-      {showNewAll && (
+      {newAlbumList.length === 0 ? (
+        <CircularProgress />
+      ) : (
+        showNewAll && (
         <div className="grid-container">
           {newAlbumList.map((album) => (
             <div className="new-album-card" key={album.id}>
@@ -400,7 +405,7 @@ export default function Albumlist() {
             </div>
           ))}
         </div>
-      )}
+      ))}
     </div>
   );
 }
