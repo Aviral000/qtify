@@ -1,0 +1,25 @@
+.songs-heading {
+    font-weight: bold;
+    color: white;
+    margin-left: 2rem;
+    font-size: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.songs-genre-button {
+    display: flex;
+    margin-left: 1rem;
+}
+
+.BootstrapButton-active :active {
+    text-decoration: underline;
+    text-decoration-color: #34C94B;
+}
+
+.swiper-container {
+    width: 98%;
+    height: 40vh;
+    margin-bottom: 5rem;
+    margin-left: 1rem;
+    margin-top: 1rem;
+  }

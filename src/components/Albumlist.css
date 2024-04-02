@@ -66,16 +66,21 @@
     border-radius: 1rem;
 }
 
-  .swiper-slide {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-  
-  .swiper-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.circularprogress {
+  display: flex;
+  justify-content: center;
+}
