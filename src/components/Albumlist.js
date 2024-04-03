@@ -45,16 +45,18 @@ const SwiperComponent = ({ albumlist }) => {
   );
 };
 
-export default function Albumlist() {
+export default function Albumlist({ searchResult, searchTerm, setTextAvail }) {
   const [albumlist, setAlbumlist] = useState([]);
   const [showAll, setShowAll] = useState(false);
   const [newAlbumList, setNewAlbumList] = useState([]);
   const [showNewAll, setShowNewAll] = useState(false);
+  const [filteredAlbums, setFilteredAlbums] = useState([]);
 
   const ApiCallForAlbums = async () => {
     try {
       const response = await axios.get("https://qtify-backend-labs.crio.do/albums/top");
       setAlbumlist(response.data);
+      setFilteredAlbums(response.data);
       return response.data;
     } catch (error) {
       throw error;
@@ -64,6 +66,7 @@ export default function Albumlist() {
   const ApiCallForNewAlbums = async () => {
     try {
       const response = await axios.get("https://qtify-backend-labs.crio.do/albums/new");
+      setFilteredAlbums(prevAlbums => [...prevAlbums, ...response.data]);
       setNewAlbumList(response.data);
       return response.data;
     } catch (error) {
@@ -72,9 +75,21 @@ export default function Albumlist() {
   };
 
   useEffect(() => {
-    ApiCallForAlbums();
-    ApiCallForNewAlbums();
+    Promise.all([ApiCallForAlbums(), ApiCallForNewAlbums()])
+      .then(([topAlbums, newAlbums]) => setFilteredAlbums([...topAlbums, ...newAlbums]));
   }, []);
+
+  const debounceSearch = () => {
+    const filtered = filteredAlbums.filter(album => 
+      album.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    console.log(typeof(filtered));
+    searchResult(filtered);
+  }
+
+  // if(setTextAvail) {
+  //   debounceSearch();
+  // }
 
   const toggleShowAll = () => {
     setShowAll(!showAll);
